@@ -30,30 +30,32 @@ Make sure to adjust these values if you plan to run this on your own GKE account
 1. **Build the Docker image**:
    ```bash
    docker build -t gcr.io/clouddemo-440721/ml-app:v7 .
-2. Push the Docker image to Google Container Registry
+2. **Push the Docker image to Google Container Registry**:
 
-  ```bash
-  docker push gcr.io/clouddemo-440721/ml-app:v7
-3. Create the GKE cluster
+   ```bash
+   docker push gcr.io/clouddemo-440721/ml-app:v7
 
-  ```bash
-  gcloud container clusters create demo-cluster \
+3. **Create the GKE cluster**:
+
+   ```bash
+   gcloud container clusters create demo-cluster \
     --num-nodes 1 \
     --region us-east1 \
     --machine-type e2-small \
     --disk-type pd-standard
-4. Get the credentials for the GKE cluster
 
-  ```bash
-  gcloud container clusters get-credentials demo-cluster --region us-east1
+4. **Get the credentials for the GKE cluster**:
 
-5. Deploy the application on Kubernetes
+   ```bash
+   gcloud container clusters get-credentials demo-cluster --region us-east1
 
-  ```bash
-  kubectl apply -f deployment.yaml
-  kubectl apply -f service.yaml
+5. **Deploy the application on Kubernetes**:
 
-6. Get the service address to access your deployed model
+   ```bash
+   kubectl apply -f deployment.yaml
+   kubectl apply -f service.yaml
 
-  ```bash
-  kubectl get services
+6. **Get the service address to access your deployed model**:
+
+   ```bash
+   kubectl get services
