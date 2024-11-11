@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNeighbors Classifier on Iris Dataset</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Title and Description -->
+        <div class="header-box">
+            <h1>KNeighbors Classifier on Iris Dataset</h1>
+            <p class="description">
+                Enter sepal length, sepal width, petal length, and petal width. The model will predict the flower species: Virginica, Setosa, or Versicolor, based on the 5 nearest neighbors.
+            </p>
+        </div>
+
+        <!-- Prediction Form -->
+        <div class="form-box">
+            <h2>Enter Data</h2>
+            <form action="/" method="post">
+                <div class="form-group">
+                    <div class="input-box">
+                        <label for="sepal_length">Sepal Length (cm):</label>
+                        <input type="text" name="sepal_length" id="sepal_length" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="sepal_width">Sepal Width (cm):</label>
+                        <input type="text" name="sepal_width" id="sepal_width" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="petal_length">Petal Length (cm):</label>
+                        <input type="text" name="petal_length" id="petal_length" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="petal_width">Petal Width (cm):</label>
+                        <input type="text" name="petal_width" id="petal_width" required>
+                    </div>
+                </div>
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+
+        <!-- Display Prediction Result if available -->
+        <div class="result-box">
+            {% if prediction is not none %}
+                <h2>Prediction</h2>
+                <p>The predicted flower species is: <span>{{ prediction }}</span></p>
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+</html>
