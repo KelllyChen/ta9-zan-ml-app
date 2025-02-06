@@ -1,6 +1,6 @@
 # ta9-zan-ml-app
 
-Link to the deployed model: [http://35.229.43.40/](http://35.229.43.40/)
+Link to the deployed model: [http://35.229.43.40/](http://35.229.43.40/)  (It was a class project, and the website has been taken down due to the holding fee.)
 
 To run the code with your own deployed model, you will need to create an account with Google Cloud.
 
